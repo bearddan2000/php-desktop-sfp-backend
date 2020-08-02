@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>SFP Back End Developer Assessment</title>
+	<link rel="stylesheet" href="requirements_files/bootstrap.css">
+	<link rel="stylesheet" href="requirements_files/default.css">
+	<script src="requirements_files/highlight.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<style>
+		slug {
+			background: #e2e2e2;
+		    padding: 0px 4px;
+		    border-radius: 4px;
+		    color:#f17c7c;
+		}
+		slug.return {
+			color:#35a03a;
+		}
+		slug.type {
+			color:#9c9c00;
+		}
+		slug.scope {
+			color:#4553e6;
+		}
+		li {
+			list-style:none;
+			margin: 15px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+      <header class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="https://sfp.cc/test-ops/submit">Submit Test <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">SFP Developer Assessment</h3>
+      </header>
+
+      <main role="main">
+
+        <div class="jumbotron">
+          <h1 class="display-3">Start the test</h1>
+          <p class="lead">Want to be part of our team, building epic shit? Download the back end developer test and follow the instructions below.</p>
+          <p><a class="btn btn-lg btn-success" href="https://sfp.cc/test-ops/download" role="button">Download</a></p>
+        </div>
+
+        <div class="row jumbotron">
+          <div class="col-lg-6">
+            <h4 class="display-4">Setup</h4>
+            <li>Download and unzip the <slug>zip</slug> file</li>
+			<li>Navigate to the unzipped directory and initialize it as a <slug>git</slug> repository</li>
+			<li>Create a branch named <slug>master</slug></li>
+			<li>create a branch that is your first and last name. All work will be done on this branch.</li>
+			<li>Ignore the <slug>vendor</slug> directory from version control</li>
+
+						<div class="row">
+          		<h3 class="display-4">Frameworks</h3>
+				
+				<li>Use composer to install the following package</li>
+				
+				<li><slug>symfony/var-dumper</slug></li>
+
+				<li>Use plain <slug>PHP</slug> for your classes and make sure the class has a public method laid out in each test description so the automated tests will run.</li>
+			</div>
+
+          </div>
+
+          <div class="col-lg-6">
+          	<div class="row">
+            	<h3 class="display-4">Structure</h3>
+            	<li>Your project should have the following structure.</li>
+<pre>SFP_PHP_TEST
+│   composer.json
+│   phpunit.xml
+│
+└───assets
+│   │    fibonacci.csv
+│   │    ...
+│
+└───src
+    │    Even.php
+    │    ...
+</pre>
+
+			</div>
+			
+
+
+			<div class="row">
+            	<h3 class="display-4">Extra Credit</h3>
+				<li>Commit your code regularly with well formatted commit messages.</li>
+				<li>Helper classes/methods are encouraged where appropriate.</li>
+			</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 jumbotron">
+          	<h4>sfp:even</h4>
+
+			<li><slug class="scope">Scope</slug>: Create a class containing a method that will return the number of even values provided in the defined dataset.</li>
+			<li>Filename <slug>src/Even.php</slug></li>
+			<li>namespace <slug>Sfp</slug></li>
+			<li>classname <slug>Even</slug></li>
+			<li>testable method <slug>execute</slug></li>
+			<li>Use <slug>assets/numbers.csv</slug></li>
+			<li><slug class="return">return</slug> <slug class="type">type Integer</slug> the number of even values</li>
+          </div>
+
+          <div class="col-lg-6 jumbotron">
+          	<h4>sfp:fibonacci</h4>
+
+			<li><slug class="scope">Scope</slug>: Create a class containing a 
+method that will return an array of integers that are 10 iterations of 
+the fibonacci sequence including the values provided in the defined 
+dataset.</li>
+			<li>Filename <slug>src/Fibonacci.php</slug></li>
+			<li>namespace <slug>Sfp</slug></li>
+			<li>classname <slug>Fibonacci</slug></li>
+			<li>testable method <slug>execute</slug></li>
+			<li>Use <slug>assets/fibonacci.csv</slug></li>
+			<li><slug class="return">return</slug> <slug class="type">type Array</slug> containing 10 iterations <slug>integer</slug> of the fibonacci sequence 
+          </li></div>
+        </div>
+
+		<div class="row">
+          <div class="col-lg-6 jumbotron">
+          	<h4>sfp:math</h4>
+
+			<li><slug class="scope">Scope</slug>: Create a class containing a 
+method that will return the average of the values provided in the 
+defined dataset whose accept field is <slug>true</slug>.</li>
+			<li>Filename <slug>src/Math.php</slug></li>
+			<li>namespace <slug>Sfp</slug></li>
+			<li>classname <slug>Math</slug></li>
+			<li>testable method <slug>execute</slug></li>
+			<li>Use <slug>assets/tabular.csv</slug></li>
+			<li><slug class="return">return</slug> <slug class="type">type Double</slug> the average of the values where <slug>accept</slug> is <slug>true</slug> with a precision of 10 decimal places
+          </li></div>
+
+          <div class="col-lg-6 jumbotron">
+          	<h4>sfp:rotate</h4>
+
+			<li><slug class="scope">Scope</slug>: Create a class containing a 
+method that will return an array that is the result of a left rotation 
+of the provided dataset. A constructor should be used that accepts an 
+argument for the rotation amount. values provided in the defined 
+dataset.</li>
+			<li>Filename <slug>src/Rotate.php</slug></li>
+			<li>namespace <slug>Sfp</slug></li>
+			<li>classname <slug>Rotate</slug></li>
+			<li>accepts <slug>integer</slug> constructor argument for shift amount</li>
+			<li>testable method <slug>execute</slug></li>
+			<li>Use <slug>assets/rotate.json</slug></li>
+			<li><slug class="return">return</slug> <slug class="type">type Array</slug></li>
+          </div>
+        </div>
+
+		<div class="row">
+          <div class="col-lg-6 jumbotron">
+          	<h4>sfp:extend</h4>
+
+			<li><slug class="scope">Scope</slug>: Create a class that extends the <slug>Sfp\Rotate</slug> class. it should contain a method that will return the last value of the extended classes <slug>execute()</slug> method.</li>
+			<li>Extend the <slug>Rotate</slug> class to add the following method</li>
+			<li>namespace <slug>Sfp</slug></li>
+			<li>classname <slug>Extend</slug></li>
+			<li>testable method <slug>extend</slug></li>
+			<li><slug class="return">return</slug> <slug class="type">type String</slug> the last value of the result Rotate classes <slug>execute()</slug> method
+          </li></div>
+        </div>
+
+      </main>
+
+      <footer class="footer">
+        <p>© SFP.net 2018</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+</body></html>
